@@ -1,4 +1,4 @@
-# Chess board 8*8 with a White Tower and a Black Bishop at random positions. 
+# Chess board 8*8/7*8/7*7 with a White Tower and a Black Bishop at random positions. 
 # Every turn the player that can defeat the other takes 1 point.
 # Print  the result table after 100 turns.
 
