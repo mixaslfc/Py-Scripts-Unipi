@@ -1,7 +1,6 @@
 # Take tha last 20 rounds of the https://www.cloudflare.com/en-gb/leagueofentropy/ services and transform them in a text of hexadecimal strings.
 # Also calculate the entropy of the string (https://en.wikipedia.org/wiki/Entropy_(information_theory)/) 
 
-import re
 from urllib.request import Request, urlopen
 import json
 import math 
