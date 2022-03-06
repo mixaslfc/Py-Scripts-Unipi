@@ -21,7 +21,7 @@ def get_randomness(id):
     randomness=data['randomness']
     return randomness
 
-# Transform the random string in a hexadecimal string. First we need to encode the random string in utf-8 and then we convert it in hexadecimal.
+# Transform the random string in a hexadecimal string. First we need to encode the random string in utf-8 and then we convert it in hexadecimal(hex()).
 def hex_str(randomness): 
     string=randomness.encode('utf-8')
     hex_str=string.hex()
@@ -30,7 +30,7 @@ def hex_str(randomness):
 
 # Calculate the entropy of the text.
 def entropy(hex_text):
-    # Calculate the probability of each character in the text.
+    # Calculate the probability of each character in the text. 
     probabilty=[ float(hex_text.count(c)/len(hex_text)) for c in set(hex_text) ]
     # calculate the entropy
     entropy = - sum([ p * math.log(p) / math.log(2.0) for p in probabilty ])
