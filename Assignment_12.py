@@ -52,7 +52,7 @@ last_round=get_round()
 # print("Last round: "+str(last_round))
 
 text=''
-# Greate a list for the random number from the last 100 rounds
+# Greate a list for the random string from the last 100 rounds
 my_rounds=list(range(last_round-10,last_round+1))
 for r in my_rounds:
     randomness=get_randomness(r)
