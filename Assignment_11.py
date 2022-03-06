@@ -50,7 +50,7 @@ for r in my_rounds:
     randomness=get_randomness(r)
     hex_string=hex_str(randomness)
     text=text+hex_string
-    # text=text+randomness | We can use this if we want to see the randomness as hexadecimal without convert.
+    # text=text+randomness | We can use this if we want to use the randomness as hexadecimal without convert.
     print("Round: "+str(r)+"\nRandomness: "+str(randomness)+"\nHexadecimal string: "+hex_string+"\n")
 
 # Print the text
