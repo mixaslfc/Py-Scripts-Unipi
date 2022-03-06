@@ -1,4 +1,4 @@
-# Take tha last 100 rounds of the https://www.cloudflare.com/en-gb/leagueofentropy/ services and transform them in a binary
+# Take tha last 100 rounds of the https://www.cloudflare.com/en-gb/leagueofentropy/ services and convert them in a binary
 # Also print the longest string of 0s and the longest string of 1s
 
 from urllib.request import Request, urlopen
@@ -23,7 +23,7 @@ def get_randomness(id):
     return randomness
 
 
-# Transform the random string in a binary string. 
+# convert the random string in a binary string. 
 # First we convert every character to ASCII(orb(i)) and 
 # then we convert it in binary(format- 08b|the b is converts the number to binary and 08 formats the number to eight digits zero-padded on the left).
 # Last we join the binary string to a string.
@@ -57,12 +57,11 @@ my_rounds=list(range(last_round-10,last_round+1))
 for r in my_rounds:
     randomness=get_randomness(r)
     b_string=binary_str(randomness)
-    # print("Round: "+str(r)+" Randomness: "+str(randomness)+" Binary string: "+b_string)
+    # print("Round: "+str(r)+"\nRandomness: "+str(randomness)+"\nBinary string: "+b_string+"\n")
     text=text+b_string
 
-print()
-print("Text: "+text)
-print()
+print("Text:"+text+"\n")
+
 print("Longest string of 1s: "+longest_string(text)[0]+" Length: "+str(len(longest_string(text)[0])))
 print("Longest string of 0s: "+longest_string(text)[1]+" Length: "+str(len(longest_string(text)[1])))
 

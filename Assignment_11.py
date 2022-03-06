@@ -1,4 +1,4 @@
-# Take tha last 20 rounds of the https://www.cloudflare.com/en-gb/leagueofentropy/ services and transform them in a text of hexadecimal strings.
+# Take tha last 20 rounds of the https://www.cloudflare.com/en-gb/leagueofentropy/ services and convert them in a text of hexadecimal strings.
 # Also calculate the entropy of the string (https://en.wikipedia.org/wiki/Entropy_(information_theory)/) 
 
 from urllib.request import Request, urlopen
@@ -21,7 +21,7 @@ def get_randomness(id):
     randomness=data['randomness']
     return randomness
 
-# Transform the random string in a hexadecimal string. First we need to encode the random string in utf-8 and then we convert it in hexadecimal(hex()).
+# Convert the random string in a hexadecimal string. First we need to encode the random string in utf-8 and then we convert it in hexadecimal(hex()).
 def hex_str(randomness): 
     string=randomness.encode('utf-8')
     hex_str=string.hex()
@@ -50,12 +50,11 @@ for r in my_rounds:
     randomness=get_randomness(r)
     hex_string=hex_str(randomness)
     text=text+hex_string
-    # print("Round: "+str(r)+" Randomness: "+str(randomness)+" Hexadecimal string: "+hex_string)
+    # text=text+randomness | We can use this if we want to see the randomness as hexadecimal without convert.
+    print("Round: "+str(r)+"\nRandomness: "+str(randomness)+"\nHexadecimal string: "+hex_string+"\n")
 
-# print()
 # Print the text
-print("Text: "+text)
-print()
+print("Text:"+text+"\n")
 # Calculate the entropy of the text
 print("Entropy: "+str(entropy(text)))
 
